@@ -3,7 +3,7 @@ declare var $: any;
 
 
 @Component({
-  selector: 'ships-details',
+  selector: 'app-ships-details',
   templateUrl: './ships-details.component.html',
   styleUrls: ['./ships-details.component.scss']
 })
@@ -18,9 +18,9 @@ export class ShipsDetailsComponent implements OnInit {
   modelDetails: string = '';
   starship_class: string = '';
 
-  constructor() { 
+  constructor() {
   }
-  
+
   ngOnInit(): void {
       this.config = {
         itemsPerPage: 5,
