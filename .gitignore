@@ -34,3 +34,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/.idea/.gitignore
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/pruebaDutti2021.iml
+/.idea/vcs.xml
