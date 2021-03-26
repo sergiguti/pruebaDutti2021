@@ -1,0 +1,17 @@
+<div class="input-group-append form__required" *ngIf="control.invalid && control.dirty">
+  <div *ngIf="control.errors.required">
+    <span class="colorInvalid">
+      <i>Campo obligatorio</i>
+    </span>
+  </div>
+  <div *ngIf="control.errors.minlength && !control.errors.required">
+    <span class="colorInvalid">
+      <i>Requiere mínimo {{control.errors.minlength['requiredLength']}} carácteres</i>
+    </span>
+  </div>
+  <div *ngIf="control.errors.email && !control.errors.required && !control.errors.minlength">
+    <span class="colorInvalid">
+      <i>Correo electrónico no válido</i>
+    </span>
+  </div>
+</div>
