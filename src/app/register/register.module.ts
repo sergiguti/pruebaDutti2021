@@ -13,7 +13,7 @@ import {SharedModule} from '../shared/shared.module';
     ReactiveFormsModule,
     SharedModule,
     RegisterRoutingModule
-  ],
+  ]
 })
 export class RegisterModule {
 }
