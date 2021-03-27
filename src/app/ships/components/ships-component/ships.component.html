@@ -1,3 +1,47 @@
-<div class="container">
-  <app-ships-details [dataList]="dataList"></app-ships-details>
-</div>
+<ng-container *ngIf="dataList">
+  <div class="buttons">
+    <button type="button" class="btn buttons__login m-1"
+            (click)="pageChanged(dataList.previous)" [disabled]="dataList.previous == null">Anterior
+    </button>
+    <button type="button" class="btn buttons__login m-1"
+            (click)="pageChanged(dataList.next)" [disabled]="dataList.next == null">Siguiente
+    </button>
+  </div>
+  <div class="ship" *ngFor="let ships of dataList.results">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ships.name}}</h3>
+    </div>
+    <div class="panel-body text-center color" (click)="openDetails(ships)">
+      <img [src]="getStarshipImageUrl(ships.url)" onError="this.src='assets/img/errorImg_x3.svg'" class="imgSize">
+    </div>
+  </div>
+  <div class="buttons mb-4">
+    <button type="button" class="btn buttons__login m-1"
+            (click)="pageChanged(dataList.previous)" [disabled]="dataList.previous == null">Anterior
+    </button>
+    <button type="button" class="btn buttons__login m-1"
+            (click)="pageChanged(dataList.next)" [disabled]="dataList.next == null">Siguiente
+    </button>
+  </div>
+
+  <!-- Modal Starship Details-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{selectedStarShip?.name}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span>Model: {{selectedStarShip?.model}}</span><br>
+          <span>Starship class: {{selectedStarShip?.starship_class}}</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
