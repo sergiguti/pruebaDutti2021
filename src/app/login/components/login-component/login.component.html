@@ -7,9 +7,9 @@
         type="text"
         class="form-control"
         placeholder="Nombre de usuario"
-        formControlName="username"/>
+        formControlName="userName"/>
       <hr class="hr-line">
-      <app-error-messages [control]="loginForm.get('username')"></app-error-messages>
+      <app-error-messages [control]="loginForm.get('userName')"></app-error-messages>
     </div>
     <div class="form-group mt-5" [ngClass]="{ 'has-error': loginForm.invalid }">
       <input
