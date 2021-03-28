@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ShipsService} from 'src/app/ships/services/ships.service';
 import {Ship} from '../../models/ship';
 import {DataShipList} from '../../models/data-ship-list';
+import {HttpErrorResponse} from '@angular/common/http';
+import {ToastrService} from 'ngx-toastr';
 
 declare var $: any;
 
@@ -17,7 +19,7 @@ export class ShipsComponent implements OnInit {
   dataList: DataShipList;
   selectedStarShip: Ship;
 
-  constructor(private shipsService: ShipsService) {
+  constructor(private shipsService: ShipsService, private toastrService: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -32,6 +34,8 @@ export class ShipsComponent implements OnInit {
   pageChanged(url?: string): void {
     this.shipsService.getShips(url).subscribe((dataShipList: DataShipList) => {
       this.dataList = dataShipList;
+    }, () => {
+      this.toastrService.error('Ha habido un error al recuperar el listado de naves', 'Error');
     });
   }
 

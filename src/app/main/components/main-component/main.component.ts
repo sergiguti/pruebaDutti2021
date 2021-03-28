@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class MainComponent {
 
   constructor(private authService: AuthService, private router: Router) {
-    if (!this.authService.userLogedIn) {
+    if (!this.authService.userLoggedIn) {
       this.router.navigate(['/login']);
     }
   }
