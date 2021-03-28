@@ -17,8 +17,7 @@
       "dom"
     ],
     "types": [
-      "node",
-      "redux"
+      "node"
     ],
     "typeRoots": [
       "node_modules/@types"

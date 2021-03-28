@@ -22,7 +22,6 @@
     "@angular/platform-browser-dynamic": "~11.0.9",
     "@angular/router": "~11.0.9",
     "@popperjs/core": "^2.4.4",
-    "@types/react-redux": "^7.1.16",
     "bootstrap": "^4.5.0",
     "buffer": "^6.0.3",
     "jest-marbles": "^2.5.1",
