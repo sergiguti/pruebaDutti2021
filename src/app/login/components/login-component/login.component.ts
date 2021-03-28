@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!this.authService.userLogedIn) {
+    if (!this.authService.userLoggedIn) {
       this.createLoginForm();
       this.toastrService.warning('Por favor, inicie sesión');
     } else {
@@ -27,14 +27,14 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private createLoginForm() {
+  private createLoginForm(): void {
     this.loginForm = this.fb.group({
       userName: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  loginUser() {
+  loginUser(): void {
     if (this.loginForm.valid) {
       // this.authService.logIn(this.loginForm.getRawValue()).subscribe((resp: any) => {
       //   if (resp) {
