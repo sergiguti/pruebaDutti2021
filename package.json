@@ -26,7 +26,6 @@
     "buffer": "^6.0.3",
     "jest-marbles": "^2.5.1",
     "jquery": "^3.5.1",
-    "ngx-pagination": "^5.0.0",
     "ngx-toastr": "^13.2.1",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
